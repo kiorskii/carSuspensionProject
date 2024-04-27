@@ -44,29 +44,29 @@ const MainScreen = () => {
           <div className={styles.controls}>
             <div className={styles.controls_left}>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="spring-deformation">Деформация пружины (l0, м)</label>
+                <label className={styles.control_label} htmlFor="spring-deformation">Деформация пружины (l0, м)</label>
                 <input className={styles.control_input} type="number" id="spring-deformation" />
               </div>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="speed">Направленная скорость (v0, м/с)</label>
+                <label className={styles.control_label} htmlFor="speed">Направленная скорость (v0, м/с)</label>
                 <input className={styles.control_input} type="number" id="speed" />
               </div>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="time">Время, с</label>
+                <label className={styles.control_label} htmlFor="time">Время, с</label>
                 <input className={styles.control_input} type="number" id="time" />
               </div>
             </div>
             <div className={styles.controls_right}>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="spring-stiffness">Жесткость пружины (c)</label>
+                <label className={styles.control_label} htmlFor="spring-stiffness">Жесткость пружины (c)</label>
                 <input className={styles.control_input} type="number" id="spring-stiffness" />
               </div>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="medium-viscosity">Вязкость среды (μ)</label>
+                <label className={styles.control_label} htmlFor="medium-viscosity">Вязкость среды (μ)</label>
                 <input className={styles.control_input} type="number" id="medium-viscosity" />
               </div>
               <div className={styles.control_group}>
-                <label className={styles.control_label} for="object-mass">Масса объекта (M, т)</label>
+                <label className={styles.control_label} htmlFor="object-mass">Масса объекта (M, т)</label>
                 <input className={styles.control_input} type="number" id="object-mass" />
               </div>
             </div>
