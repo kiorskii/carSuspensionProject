@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HelpModal from '../HelpModal/HelpModal';
 import HistoryModal from '../HistoryModal/HistoryModal';
 import styles from './MainScreen.module.css';
+import UnityWebGL from '../UnityContext/UnityContext';
 
 const MainScreen = () => {
   const [helpModalOpen, setHelpModalOpen] = useState(false);
@@ -32,7 +33,7 @@ const MainScreen = () => {
         <div className={styles.img_container}>
           <div className={styles.left_side}>
             <h3 className={styles.img_title}>Подвеска автомобиля</h3>
-            <img className={styles.img} src="/src/assets/model.jpg" alt="" />
+            <UnityWebGL className={styles.img} />
           </div>
           <div className={styles.right_side}>
             <h3 className={styles.img_title}>Подвеска автомобиля</h3>
