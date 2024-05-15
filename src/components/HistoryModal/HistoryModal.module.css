@@ -21,6 +21,7 @@
   z-index: 1001;
   /* Above the overlay */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 }
 
 .modalHeader {
@@ -33,6 +34,8 @@
 
 .modalBody {
   padding-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .closeButton {
@@ -52,4 +55,44 @@
   width: 28px;
   height: 28px;
   margin-right: 40px;
+}
+
+.el:not(:last-child) {
+  margin-bottom: 108px;
+}
+
+.historyList {
+  list-style: decimal;
+  padding: 0 60px;
+
+}
+
+.img {
+  width: 100%;
+}
+
+.itemInfo {
+  margin-top: 46px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.itemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 62px;
+}
+
+.paramsList {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.paramsItem {
+  max-width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
 }

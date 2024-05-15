@@ -21,6 +21,7 @@
   z-index: 1001;
   /* Above the overlay */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 }
 
 .modalHeader {
@@ -33,6 +34,12 @@
 
 .modalBody {
   padding-top: 20px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.formula {
+  text-align: center;
 }
 
 .closeButton {
@@ -52,4 +59,37 @@
   width: 28px;
   height: 28px;
   margin-right: 40px;
+}
+
+.modalBlock {
+  margin-bottom: 50px;
+}
+
+.flexBlock {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 44px;
+}
+
+.list {
+  list-style-type: decimal;
+}
+
+.img {
+  width: 100%;
+}
+
+.formulaList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .firstBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
 }
