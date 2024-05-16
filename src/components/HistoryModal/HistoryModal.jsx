@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './HistoryModal.module.css';
+import { useSuspensionData } from '../SuspensionContext/SuspensionContext';
 
 
 const HistoryModal = ({ onClose }) => {
+
+  const { inputData } = useSuspensionData();
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalWindow}>
