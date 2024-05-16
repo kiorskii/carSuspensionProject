@@ -12,12 +12,18 @@ export const SuspensionDataProvider = ({ children }) => {
     objectMass: ''
   });
 
+  const [history, setHistory] = useState([]);
+
+  const addToHistory = () => {
+    setHistory(prevHistory => [...prevHistory, inputData]);
+  };
+
   const updateInputData = (field, value) => {
     setInputData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
-    <SuspensionDataContext.Provider value={{ inputData, updateInputData }}>
+    <SuspensionDataContext.Provider value={{ inputData, updateInputData, history, addToHistory }}>
       {children}
     </SuspensionDataContext.Provider>
   );

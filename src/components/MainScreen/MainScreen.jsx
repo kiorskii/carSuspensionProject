@@ -17,10 +17,14 @@ const MainScreen = () => {
     setHistoryModalOpen(true);
   };
 
-  const { inputData, updateInputData } = useSuspensionData();
+  const { inputData, updateInputData, addToHistory } = useSuspensionData();
 
   const handleInputChange = (e) => {
     updateInputData(e.target.id, e.target.value);
+  };
+
+  const handleStart = () => {
+    addToHistory();
   };
 
   return (
@@ -84,7 +88,7 @@ const MainScreen = () => {
           </div>
         </div>
         <div className={styles.btn_container}>
-          <button className={styles.start_button}>Пуск</button>
+          <button className={styles.start_button} onClick={handleStart}>Пуск</button>
         </div>
       </div >
 
