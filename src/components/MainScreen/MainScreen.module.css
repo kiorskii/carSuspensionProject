@@ -11,11 +11,9 @@
   height: 30px;
 }
 
-
 .icons:first-child {
   margin-right: 20px;
 }
-
 
 .content {
   padding: 0 100px;
@@ -70,7 +68,7 @@
   color: #fff;
   margin-left: auto;
   padding: 12px 37px;
-  background-color: #FF67AA;
+  background-color: #ff67aa;
 }
 
 .controls_left,
@@ -98,6 +96,26 @@
 
 .btn_container {
   display: flex;
+}
+
+.addedText {
+  color: #a7c0ff;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.info {
+  display: flex;
+  column-gap: 20px;
+}
+
+.info h2 {
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {

@@ -5,8 +5,9 @@ import styles from "./MainScreen.module.css";
 import UnityWebGL from "../UnityContext/UnityContext";
 import { useSuspensionData } from "../SuspensionContext/SuspensionContext";
 import OscillationChart from "../OscillationChart/OscillationChart";
+import { useNavigate } from "react-router-dom";
 
-const MainScreen = () => {
+const MainScreen = ({ setIsAuthenticated }) => {
   const [helpModalOpen, setHelpModalOpen] = useState(false);
   const [historyModalOpen, setHistoryModalOpen] = useState(false);
   const [showGraph, setShowGraph] = useState(false);
@@ -31,6 +32,17 @@ const MainScreen = () => {
     setShowGraph(true);
   };
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    setIsAuthenticated(false);
+    navigate("/login");
+  };
+
+  const studentName = JSON.parse(localStorage.getItem("auth")).name;
+  const studentGroup = JSON.parse(localStorage.getItem("auth")).group;
+
   return (
     <>
       <div className={styles.header}>
@@ -50,9 +62,13 @@ const MainScreen = () => {
             />
           </button>
         </div>
-        <a className={styles.logout} href="">
-          Выход
-        </a>
+        <div className={styles.info}>
+          <h2>{studentName}</h2>
+          <h2>{studentGroup}</h2>
+          <a className={styles.logout} onClick={handleLogout} href="">
+            Выход
+          </a>
+        </div>
       </div>
       <div className={styles.content}>
         <div className={styles.img_container}>
@@ -61,7 +77,9 @@ const MainScreen = () => {
             <UnityWebGL className={styles.img} />
           </div>
           <div className={styles.right_side}>
-            <h3 className={styles.img_title}>Подвеска автомобиля</h3>
+            <h3 className={styles.img_title}>
+              График затухающих колебаний подвески
+            </h3>
             {showGraph ? (
               <OscillationChart
                 deformation={parseFloat(
@@ -93,7 +111,7 @@ const MainScreen = () => {
                   className={styles.control_label}
                   htmlFor="springDeformation"
                 >
-                  Деформация пружины (l0, м)
+                  Деформация пружины (l0), м
                 </label>
                 <input
                   className={styles.control_input}
@@ -104,7 +122,7 @@ const MainScreen = () => {
               </div>
               <div className={styles.control_group}>
                 <label className={styles.control_label} htmlFor="speed">
-                  Направленная скорость (v0, м/с)
+                  Начальная скорость (v0), м/с
                 </label>
                 <input
                   className={styles.control_input}
@@ -115,7 +133,7 @@ const MainScreen = () => {
               </div>
               <div className={styles.control_group}>
                 <label className={styles.control_label} htmlFor="time">
-                  Время, с
+                  Время (t), c
                 </label>
                 <input
                   className={styles.control_input}
@@ -131,7 +149,7 @@ const MainScreen = () => {
                   className={styles.control_label}
                   htmlFor="springStiffness"
                 >
-                  Жесткость пружины (c)
+                  Жесткость пружины (с), Н/м
                 </label>
                 <input
                   className={styles.control_input}
@@ -145,7 +163,7 @@ const MainScreen = () => {
                   className={styles.control_label}
                   htmlFor="mediumViscosity"
                 >
-                  Вязкость среды (μ)
+                  Вязкость среды (μ), кг/м*с
                 </label>
                 <input
                   className={styles.control_input}
@@ -156,7 +174,7 @@ const MainScreen = () => {
               </div>
               <div className={styles.control_group}>
                 <label className={styles.control_label} htmlFor="objectMass">
-                  Масса объекта (M, т)
+                  Масса объекта (М), кг
                 </label>
                 <input
                   className={styles.control_input}
@@ -169,6 +187,14 @@ const MainScreen = () => {
           </div>
         </div>
         <div className={styles.btn_container}>
+          <p className={styles.addedText}>
+            Формула для расчета: x = Ae^-nt sin(k1t + α)
+            <br />
+            Подробнее см. в{" "}
+            <b className={styles.link} onClick={openHelpModal}>
+              Справка
+            </b>
+          </p>
           <button className={styles.start_button} onClick={handleStart}>
             Рассчитать
           </button>

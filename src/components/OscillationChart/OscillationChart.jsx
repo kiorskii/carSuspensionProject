@@ -50,11 +50,19 @@ const OscillationChart = ({
     return <p>{message}</p>;
   }
 
+  const studentName = JSON.parse(localStorage.getItem("auth")).name;
+  const studentGroup = JSON.parse(localStorage.getItem("auth")).group;
+
   return (
     <Plot
       data={[data]}
       layout={{
-        title: "Затухающие колебания подвески автомобиля",
+        title:
+          studentName +
+          " / " +
+          studentGroup +
+          "<br>" +
+          "График затухающих колебаний",
         xaxis: { title: "Время, с" },
         yaxis: { title: "Деформация пружины, м" },
         width: 500,
