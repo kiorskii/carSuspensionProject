@@ -6,10 +6,12 @@ import UnityWebGL from "../UnityContext/UnityContext";
 import { useSuspensionData } from "../SuspensionContext/SuspensionContext";
 import OscillationChart from "../OscillationChart/OscillationChart";
 import { useNavigate } from "react-router-dom";
+import ErrorModal from "../ErrorModal/ErrorModal";
 
 const MainScreen = ({ setIsAuthenticated }) => {
   const [helpModalOpen, setHelpModalOpen] = useState(false);
   const [historyModalOpen, setHistoryModalOpen] = useState(false);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
   const [showGraph, setShowGraph] = useState(false);
 
   const openHelpModal = () => {
@@ -20,6 +22,10 @@ const MainScreen = ({ setIsAuthenticated }) => {
     setHistoryModalOpen(true);
   };
 
+  const openErrorModal = () => {
+    setErrorModalOpen(true);
+  };
+
   const { history, inputData, updateInputData, addToHistory } =
     useSuspensionData();
 
@@ -28,6 +34,12 @@ const MainScreen = ({ setIsAuthenticated }) => {
   };
 
   const handleStart = () => {
+    const k = Math.sqrt(inputData.springStiffness / inputData.objectMass);
+    const n = inputData.mediumViscosity / (2 * inputData.objectMass);
+
+    if (n >= k) {
+      setErrorModalOpen(true);
+    }
     addToHistory();
     setShowGraph(true);
   };
@@ -204,6 +216,9 @@ const MainScreen = ({ setIsAuthenticated }) => {
         {helpModalOpen && <HelpModal onClose={() => setHelpModalOpen(false)} />}
         {historyModalOpen && (
           <HistoryModal onClose={() => setHistoryModalOpen(false)} />
+        )}
+        {errorModalOpen && (
+          <ErrorModal onClose={() => setErrorModalOpen(false)} />
         )}
       </div>
     </>

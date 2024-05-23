@@ -18,6 +18,14 @@ const HelpModal = ({ onClose }) => {
     };
   }, []);
 
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    console.log(element);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalWindow}>
@@ -36,6 +44,66 @@ const HelpModal = ({ onClose }) => {
           </button>
         </div>
         <div className={styles.modalBody}>
+          <ul className={styles.nav + " " + styles.modalBlock}>
+            <li onClick={() => scrollTo(1)} className={styles.nav__el}>
+              Устройство подвески
+            </li>
+            <li onClick={() => scrollTo(2)} className={styles.nav__el}>
+              Колебания
+            </li>
+            <li onClick={() => scrollTo(3)} className={styles.nav__el}>
+              Алгоритм решения
+            </li>
+          </ul>
+          <h2 id="1" className={styles.blockTitle}>
+            Устройство подвески
+          </h2>
+          <div
+            className={
+              styles.modalBlock +
+              " " +
+              styles.flexBlock +
+              " " +
+              styles.firstBlock
+            }
+          >
+            <p>
+              Подвеска автомобиля представляет собой систему, которая соединяет
+              колеса с кузовом или рамой и обеспечивает их взаимодействие. Она
+              служит для восприятия и поглощения ударов, вибраций и колебаний,
+              возникающих при движении автомобиля по неровностям дороги.
+              Амортизаторы играют важную роль в уменьшении колебаний автомобиля
+              и являются одной из составляющих частей подвески автомобиля.
+            </p>
+            <img className={styles.img} src="/src/assets/image 14.jpg" alt="" />
+          </div>
+          <p className={styles.modalBlock}>
+            Амортизаторы выполняют следующие функции:
+          </p>
+          <ol className={styles.modalBlock + " " + styles.list}>
+            <li>Поглощение ударов и колебаний</li>
+            <li>Поддержание контакта колес с дорогой</li>
+            <li>
+              Предотвращение перекачивания при поворотах или изменении
+              направления движения
+            </li>
+            <li>Улучшение тормозных характеристик</li>
+          </ol>
+          <p className={styles.modalBlock}>
+            Пружины являются еще одним важным компонентом подвески, который
+            оказывает значительное влияние на ее поведение и характеристики.
+            Пружины поддерживают вес автомобиля и пассажиров, обеспечивая
+            оптимальный контакт колес с дорогой при различных нагрузках. Они
+            также играют роль в передаче нагрузки от колес к кузову автомобиля и
+            наоборот. Жесткость пружин определяет уровень комфорта и
+            управляемости автомобиля. Более жесткие пружины обеспечивают более
+            точное управление и меньшую склонность к наклонам, в то время как
+            более мягкие пружины обеспечивают более комфортное движение за счет
+            лучшей амортизации.
+          </p>
+          <h2 id="2" className={styles.blockTitle}>
+            Колебания
+          </h2>
           <div
             className={
               styles.modalBlock +
@@ -56,11 +124,13 @@ const HelpModal = ({ onClose }) => {
             </p>
             <img className={styles.img} src="/src/assets/image 13.jpg" alt="" />
           </div>
+          <h2 id="3" className={styles.blockTitle}>
+            Алгоритм решения
+          </h2>
           <p className={styles.modalBlock}>
             Для решения задачи необходимы варьируемые параметры и начальные
             условия.
           </p>
-
           <div className={styles.modalBlock + " " + styles.flexBlock}>
             <div>
               <p className={styles.modalBlock}>Начальные условия:</p>
@@ -139,6 +209,12 @@ const HelpModal = ({ onClose }) => {
             <p>1. Если C1 ≠ 0, то α=arcsin⁡ (C1/A)</p>
             <p>2. Если C2 ≠ 0, то α=arccos (⁡C2/A)</p>
           </div>
+          <h2 className={styles.blockTitle}>Блок-схема:</h2>
+          <img
+            className={styles.modalImgSchema}
+            src="/src/assets/schema.png"
+            alt=""
+          />
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@
 
 .content {
   padding: 0 100px;
+  padding-bottom: 80px;
 }
 
 .img_container {
@@ -127,6 +128,10 @@
     flex-direction: column;
   }
 
+  .right_side {
+    margin-top: 30px;
+  }
+
   .controls {
     flex-direction: column;
     align-items: center;
@@ -138,5 +143,19 @@
     display: flex;
     flex-direction: column;
     row-gap: 36px;
+  }
+
+  .btn_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .addedText {
+    margin-bottom: 30px;
+  }
+
+  .content {
+    padding: 0 50px;
+    padding-bottom: 40px;
   }
 }
