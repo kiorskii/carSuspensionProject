@@ -5,10 +5,10 @@ import styles from "./UnityContext.module.css";
 function UnityWebGL() {
 
   const { unityProvider } = useUnityContext({
-    loaderUrl: "/public/Build/123.loader.js",
-    dataUrl: "/public/Build/123.data.unityweb",
-    frameworkUrl: "/public/Build/123.framework.js.unityweb",
-    codeUrl: "/public/Build/123.wasm.unityweb",
+    loaderUrl: "/build/123.loader.js",
+    dataUrl: "/build/123.data.unityweb",
+    frameworkUrl: "/build/123.framework.js.unityweb",
+    codeUrl: "/build/123.wasm.unityweb",
   });
 
   return (

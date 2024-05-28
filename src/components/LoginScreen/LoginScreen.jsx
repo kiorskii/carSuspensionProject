@@ -18,7 +18,7 @@ const LoginScreen = ({ setIsAuthenticated }) => {
 
   return (
     <div className={styles.loginScreen}>
-      <img alt="Logo" src="/src/assets/logo.png" className="login-logo" />
+      <img alt="Logo" src="/assets/logo.png" className="login-logo" />
       <div className={styles.info}>
         <h1 className={styles.title}>Добро пожаловать!</h1>
         <p className={styles.description}>

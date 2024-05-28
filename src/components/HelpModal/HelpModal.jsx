@@ -33,14 +33,14 @@ const HelpModal = ({ onClose }) => {
           <div className={styles.title}>
             <img
               className={styles.icons}
-              src="/src/assets/help-icon.svg"
+              src="/assets/help-icon.svg"
               alt=""
             />
             <h2>Справка</h2>
           </div>
 
           <button onClick={onClose} className={styles.closeButton}>
-            <img src="/src/assets/cross-icon.svg" alt="" />
+            <img src="/assets/cross-icon.svg" alt="" />
           </button>
         </div>
         <div className={styles.modalBody}>

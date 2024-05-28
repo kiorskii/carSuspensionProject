@@ -28,13 +28,13 @@ const HistoryModal = ({ onClose }) => {
           <div className={styles.title}>
             <img
               className={styles.icons}
-              src="/src/assets/history-icon.svg"
+              src="/assets/history-icon.svg"
               alt=""
             />
             <h2>История</h2>
           </div>
           <button onClick={onClose} className={styles.closeButton}>
-            <img src="/src/assets/cross-icon.svg" alt="" />
+            <img src="/assets/cross-icon.svg" alt="" />
           </button>
         </div>
         <div className={styles.modalBody}>

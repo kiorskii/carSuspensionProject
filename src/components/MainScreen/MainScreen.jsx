@@ -62,14 +62,14 @@ const MainScreen = ({ setIsAuthenticated }) => {
           <button onClick={openHelpModal}>
             <img
               className={styles.icons}
-              src="/src/assets/help-icon.svg"
+              src="/assets/help-icon.svg"
               alt=""
             />
           </button>
           <button onClick={openHistoryModal}>
             <img
               className={styles.icons}
-              src="/src/assets/history-icon.svg"
+              src="/assets/history-icon.svg"
               alt=""
             />
           </button>
