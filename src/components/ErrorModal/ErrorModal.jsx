@@ -25,7 +25,7 @@ const ErrorModal = ({ onClose }) => {
             <h2>Ошибка</h2>
           </div>
           <button onClick={onClose} className={styles.closeButton}>
-            <img src="/src/assets/cross-icon.svg" alt="" />
+            <img src="/assets/cross-icon.svg" alt="" />
           </button>
         </div>
         <div className={styles.modalBody}>
