@@ -1,4 +1,5 @@
 .unityContainer {
   width: 75%;
+  max-width: 800px;
   height: 450px;
 }

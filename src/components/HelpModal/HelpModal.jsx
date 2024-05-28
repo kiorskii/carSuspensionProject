@@ -75,7 +75,7 @@ const HelpModal = ({ onClose }) => {
               Амортизаторы играют важную роль в уменьшении колебаний автомобиля
               и являются одной из составляющих частей подвески автомобиля.
             </p>
-            <img className={styles.img} src="/src/assets/image 14.jpg" alt="" />
+            <img className={styles.img} src="/assets/image 14.jpg" alt="" />
           </div>
           <p className={styles.modalBlock}>
             Амортизаторы выполняют следующие функции:
@@ -122,7 +122,7 @@ const HelpModal = ({ onClose }) => {
               колебания затухающие. В нашей задаче мы рассматриваем затухающие
               колебания.
             </p>
-            <img className={styles.img} src="/src/assets/image 13.jpg" alt="" />
+            <img className={styles.img} src="/assets/image 13.jpg" alt="" />
           </div>
           <h2 id="3" className={styles.blockTitle}>
             Алгоритм решения
@@ -212,7 +212,7 @@ const HelpModal = ({ onClose }) => {
           <h2 className={styles.blockTitle}>Блок-схема:</h2>
           <img
             className={styles.modalImgSchema}
-            src="/src/assets/schema.png"
+            src="/assets/schema.png"
             alt=""
           />
         </div>
