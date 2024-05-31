@@ -79,28 +79,30 @@ const HistoryModal = ({ onClose }) => {
                         </p>
                       </li>
                       <li className={styles.paramsItem}>
-                        <p className={styles.paramsLabel}>Время, c</p>
+                        <p className={styles.paramsLabel}>Время (t), c</p>
                         <p className={styles.paramsValue}>
                           {history[index].time}
                         </p>
                       </li>
                       <li className={styles.paramsItem}>
                         <p className={styles.paramsLabel}>
-                          Жесткость пружины (с)
+                          Жесткость пружины (с), Н/м
                         </p>
                         <p className={styles.paramsValue}>
                           {history[index].springStiffness}
                         </p>
                       </li>
                       <li className={styles.paramsItem}>
-                        <p className={styles.paramsLabel}>Вязкость среды (μ)</p>
+                        <p className={styles.paramsLabel}>
+                          Вязкость среды (μ), кг/м*с
+                        </p>
                         <p className={styles.paramsValue}>
                           {history[index].mediumViscosity}
                         </p>
                       </li>
                       <li className={styles.paramsItem}>
                         <p className={styles.paramsLabel}>
-                          Масса объекта (М), т
+                          Масса объекта (М), кг
                         </p>
                         <p className={styles.paramsValue}>
                           {history[index].objectMass}

@@ -113,6 +113,10 @@
   width: 100%;
 }
 
+.amor {
+  width: 80%;
+}
+
 @media screen and (max-width: 900px) {
   .firstBlock {
     display: flex;

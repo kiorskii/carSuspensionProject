@@ -123,6 +123,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
                   id="springDeformation"
                   onChange={handleInputChange}
@@ -134,6 +135,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
                   id="speed"
                   onChange={handleInputChange}
@@ -145,6 +147,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
                   id="time"
                   onChange={handleInputChange}
@@ -161,6 +164,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
                   id="springStiffness"
                   onChange={handleInputChange}
@@ -175,6 +179,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
                   id="mediumViscosity"
                   onChange={handleInputChange}
@@ -186,7 +191,9 @@ const MainScreen = ({ setIsAuthenticated }) => {
                 </label>
                 <input
                   className={styles.control_input}
+                  required
                   type="float"
+                  step="0.1"
                   id="objectMass"
                   onChange={handleInputChange}
                 />
@@ -196,14 +203,18 @@ const MainScreen = ({ setIsAuthenticated }) => {
         </div>
         <div className={styles.btn_container}>
           <p className={styles.addedText}>
-            Формула для расчета: x = Ae<sup>-nt</sup> sin(k<sup>1</sup>t + α)
+            Формула для расчета: x = Ae<sup>-nt</sup> sin(k<sub>1</sub>t + α)
             <br />
             Подробнее см. в{" "}
             <b className={styles.link} onClick={openHelpModal}>
               Справка
             </b>
           </p>
-          <button className={styles.start_button} onClick={handleStart}>
+          <button
+            type="submit"
+            className={styles.start_button}
+            onClick={handleStart}
+          >
             Применить
           </button>
         </div>
