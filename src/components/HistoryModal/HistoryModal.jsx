@@ -64,7 +64,7 @@ const HistoryModal = ({ onClose }) => {
                     <ul className={styles.paramsList}>
                       <li className={styles.paramsItem}>
                         <p className={styles.paramsLabel}>
-                          Деформация пружины (l0), м
+                          Деформация пружины (l<sub>0</sub>), м
                         </p>
                         <p className={styles.paramsValue}>
                           {history[index].springDeformation}
@@ -72,7 +72,7 @@ const HistoryModal = ({ onClose }) => {
                       </li>
                       <li className={styles.paramsItem}>
                         <p className={styles.paramsLabel}>
-                          Начальная скорость (v0), м/с
+                          Начальная скорость (v<sub>0</sub>), м/с
                         </p>
                         <p className={styles.paramsValue}>
                           {history[index].speed}

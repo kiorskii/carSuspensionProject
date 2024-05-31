@@ -60,11 +60,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
       <div className={styles.header}>
         <div className={styles.buttons}>
           <button onClick={openHelpModal}>
-            <img
-              className={styles.icons}
-              src="/assets/help-icon.svg"
-              alt=""
-            />
+            <img className={styles.icons} src="/assets/help-icon.svg" alt="" />
           </button>
           <button onClick={openHistoryModal}>
             <img
@@ -123,7 +119,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
                   className={styles.control_label}
                   htmlFor="springDeformation"
                 >
-                  Деформация пружины (l0), м
+                  Деформация пружины (l<sub>0</sub>), м
                 </label>
                 <input
                   className={styles.control_input}
@@ -134,7 +130,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
               </div>
               <div className={styles.control_group}>
                 <label className={styles.control_label} htmlFor="speed">
-                  Начальная скорость (v0), м/с
+                  Начальная скорость (v<sub>0</sub>), м/с
                 </label>
                 <input
                   className={styles.control_input}
@@ -200,7 +196,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
         </div>
         <div className={styles.btn_container}>
           <p className={styles.addedText}>
-            Формула для расчета: x = Ae^-nt sin(k1t + α)
+            Формула для расчета: x = Ae<sup>-nt</sup> sin(k<sup>1</sup>t + α)
             <br />
             Подробнее см. в{" "}
             <b className={styles.link} onClick={openHelpModal}>
@@ -208,7 +204,7 @@ const MainScreen = ({ setIsAuthenticated }) => {
             </b>
           </p>
           <button className={styles.start_button} onClick={handleStart}>
-            Рассчитать
+            Применить
           </button>
         </div>
       </div>

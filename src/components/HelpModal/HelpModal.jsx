@@ -31,11 +31,7 @@ const HelpModal = ({ onClose }) => {
       <div className={styles.modalWindow}>
         <div className={styles.modalHeader}>
           <div className={styles.title}>
-            <img
-              className={styles.icons}
-              src="/assets/help-icon.svg"
-              alt=""
-            />
+            <img className={styles.icons} src="/assets/help-icon.svg" alt="" />
             <h2>Справка</h2>
           </div>
 
@@ -75,7 +71,7 @@ const HelpModal = ({ onClose }) => {
               Амортизаторы играют важную роль в уменьшении колебаний автомобиля
               и являются одной из составляющих частей подвески автомобиля.
             </p>
-            <img className={styles.img} src="/assets/image 14.jpg" alt="" />
+            <img className={styles.img} src="/assets/suspen.PNG" alt="" />
           </div>
           <p className={styles.modalBlock}>
             Амортизаторы выполняют следующие функции:
@@ -122,7 +118,7 @@ const HelpModal = ({ onClose }) => {
               колебания затухающие. В нашей задаче мы рассматриваем затухающие
               колебания.
             </p>
-            <img className={styles.img} src="/assets/image 13.jpg" alt="" />
+            <img className={styles.img} src="/assets/table.PNG" alt="" />
           </div>
           <h2 id="3" className={styles.blockTitle}>
             Алгоритм решения
@@ -135,8 +131,12 @@ const HelpModal = ({ onClose }) => {
             <div>
               <p className={styles.modalBlock}>Начальные условия:</p>
               <ol className={styles.list}>
-                <li>Начальная деформация пружины (l0)</li>
-                <li>Начальная скорость (v0)</li>
+                <li>
+                  Начальная деформация пружины (l<sub>0</sub>)
+                </li>
+                <li>
+                  Начальная скорость (v<sub>0</sub>)
+                </li>
               </ol>
             </div>
             <div>
@@ -150,9 +150,9 @@ const HelpModal = ({ onClose }) => {
             </div>
           </div>
           <p className={styles.modalBlock}>
-            На систему подвески автомобиля действуют восстанавливающая
-            сила (Fупр) и сила сопротивления (R). Для того, чтобы понять, какое
-            будет движение, необходимо вычислить циклическую частоту
+            На систему подвески автомобиля действуют восстанавливающая сила (F
+            <sub>упр</sub>) и сила сопротивления (R). Для того, чтобы понять,
+            какое будет движение, необходимо вычислить циклическую частоту
             колебаний (k) и коэффициент, характеризующий вязкость среды (n). Для
             вычисления используются формулы:
           </p>
@@ -184,30 +184,50 @@ const HelpModal = ({ onClose }) => {
             Общее решение имеет следующий вид (амплитудная форма записи):
           </p>
           <p className={styles.modalBlock + " " + styles.formula}>
-            x = Ae-nt sin(k1t + α).
+            x = Ae<sup>-nt</sup>sin(k<sub>1</sub>t + α).
           </p>
           <p className={styles.modalBlock}>
             Вычисляются промежуточные величины:
           </p>
           <div className={styles.modalBlock + " " + styles.formula}>
             <ul className={styles.formulaList}>
-              <li>k1 = √(k2-n2),</li>
-              <li>λст = (M/c)*g,</li>
-              <li>x0 = -(λст-l0),</li>
-              <li>x ̇0 = v0,</li>
-              <li>C1 = x0, C2 = (x ̇0+n*x0)/k1,</li>
-              <li>A = √(C12+C22),</li>
+              <li>
+                k<sub>1</sub> = √(k<sup>2</sup>-n<sup>2</sup>),
+              </li>
+              <li>
+                λ<sub>ст</sub> = (M/c)*g,
+              </li>
+              <li>
+                x<sub>0</sub> = -(λ<sub>ст</sub>-l<sub>0</sub>),
+              </li>
+              <li>
+                x ̇<sub>0</sub> = v<sub>0</sub>,
+              </li>
+              <li>
+                C<sub>1</sub> = x0, C<sub>2</sub> = (x ̇<sub>0</sub>+n*x
+                <sub>0</sub>)/k
+                <sub>1</sub>,
+              </li>
+              <li>
+                A = √(C<sub>1</sub>
+                <sup>2</sup>+C<sub>2</sub>
+                <sup>2</sup>),
+              </li>
             </ul>
           </div>
           <p className={styles.modalBlock}>
             Начальная фаза колебаний вычисляется из следующих выражений:
           </p>
           <p className={styles.modalBlock + " " + styles.formula}>
-            sin⁡ α=C1/A, cos ⁡α=C2/A
+            sin⁡ α=C<sub>1</sub>/A, cos ⁡α=C<sub>2</sub>/A
           </p>
           <div className={styles.modalBlock + " " + styles.flexBlock}>
-            <p>1. Если C1 ≠ 0, то α=arcsin⁡ (C1/A)</p>
-            <p>2. Если C2 ≠ 0, то α=arccos (⁡C2/A)</p>
+            <p>
+              1. Если C<sub>1</sub> ≠ 0, то α=arcsin⁡ (C<sub>1</sub>/A)
+            </p>
+            <p>
+              2. Если C<sub>2</sub> ≠ 0, то α=arccos (⁡C<sub>2</sub>/A)
+            </p>
           </div>
           <h2 className={styles.blockTitle}>Блок-схема:</h2>
           <img

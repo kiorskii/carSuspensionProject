@@ -37,6 +37,11 @@
   font-size: 16px;
 }
 
+.input:user-invalid {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
 .button {
   font-size: 18px;
   background-color: #317a89;

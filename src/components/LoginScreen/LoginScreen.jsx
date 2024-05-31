@@ -22,12 +22,12 @@ const LoginScreen = ({ setIsAuthenticated }) => {
       <div className={styles.info}>
         <h1 className={styles.title}>Добро пожаловать!</h1>
         <p className={styles.description}>
-          Мы команда “Кодамы” и это наш сервис с интерактивной моделью для
+          Мы команда “Кодамы”, и это наш сервис с интерактивной моделью для
           демонстрации колебаний подвески автомобиля
         </p>
         <form className={styles.form} onSubmit={handleLogin}>
           <label className={styles.label} htmlFor="name">
-            Введите ваше имя:
+            Введите своё ФИО:
           </label>
           <input
             className={styles.input}
@@ -38,7 +38,7 @@ const LoginScreen = ({ setIsAuthenticated }) => {
             required
           />
           <label className={styles.label} htmlFor="group">
-            Введите вашу группу в формате ХХ-123456:
+            Введите группу (ХХ-ХХХХХХ):
           </label>
           <input
             className={styles.input}
